@@ -3,7 +3,7 @@ const enemy_sprite = document.getElementById('enemy');
 const player_sprite = document.getElementById('player');
 
 
-// Enemies our player must avoid
+// Enemies for our player to avoid.
 function Enemy(x, y, dx) {
   this.x = x;
   this.y = y;
@@ -27,6 +27,7 @@ Enemy.prototype.update = function(dt) {
     };
     this.x += (this.dx*dt);
 
+    // code to handle collision:
     if ((distanceBetween(this.x, player1.x) < 79)
         && (this.y === player1.y)
         && (distanceBetween(this.x, player1.x) > -79)) {

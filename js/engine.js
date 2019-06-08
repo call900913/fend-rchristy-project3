@@ -24,11 +24,10 @@ var Engine = (function(global) {
         ctx = canvas.getContext('2d'),
         lastTime;
 
-    var enemy1 = new Enemy(100, 305);
+
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
-    console.log('Running.');
 
 
 
@@ -101,20 +100,11 @@ var Engine = (function(global) {
         main();
     };
 
-    /* This function is called by main (our game loop) and itself calls all
-     * of the functions which may need to update entity's data. Based on how
-     * you implement your collision detection (when two entities occupy the
-     * same space, for instance when your character should die), you may find
-     * the need to add an additional function call here. For now, we've left
-     * it commented out - you may or may not want to implement this
-     * functionality this way (you could just implement collision detection
-     * on the entities themselves within your app.js file).
+    /* This function is called by main (our game loop);
+     * it updates entities;
      */
     function update(dt) {
-        // enemy1.update(dt);
-        // player1.update(dt);
         updateEntities(dt);
-        // checkCollisions();
     };
 
     /* This is called by the update function and loops through all of the
@@ -172,7 +162,7 @@ var Engine = (function(global) {
             }
         }
 
-        enemy1.render();
+
         player1.render();
         renderEntities();
     }
