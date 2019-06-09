@@ -38,7 +38,6 @@ Enemy.prototype.update = function(dt, player) {
   if ((distanceBetween(this.x, player.x) < 79)
     && (this.y === player.y)
     && (distanceBetween(this.x, player.x) > -79)) {
-      console.log(distanceBetween(this.x, player.x));
       player.x = 300;
       player.y = 305;
   };
