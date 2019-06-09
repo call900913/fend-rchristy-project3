@@ -94,8 +94,6 @@ var Engine = (function(global) {
      * game loop.
      */
     function init() {
-        // reset();
-        console.log('init invoked');
         lastTime = Date.now();
         main();
     };
