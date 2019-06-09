@@ -38,7 +38,7 @@ Enemy.prototype.update = function(dt, player) {
   this.x += (this.dx*dt);
 
   // code to handle collision:
-  if ((distanceBetween(this.x, player.x) < 79) &&
+  if ((distanceBetween(this.x, player.x) < 74) &&
     (this.y === player.y) &&
     (distanceBetween(this.x, player.x) > -79)) {
       player.x = 300;
