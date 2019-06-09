@@ -48,7 +48,7 @@ var Engine = (function(global) {
          * our update function since it may be used for smooth animation.
          */
 
-        update(dt);
+        update(dt, player1);
         render();
 
         /* Set our lastTime variable which is used to determine the time delta
@@ -103,7 +103,7 @@ var Engine = (function(global) {
     /* This function is called by main (our game loop);
      * it updates entities;
      */
-    function update(dt) {
+    function update(dt, player1) {
         updateEntities(dt);
     };
 
@@ -116,7 +116,7 @@ var Engine = (function(global) {
      */
 
     function updateEntities(dt) {
-        allEnemies.forEach(enemy => enemy.update(dt));
+        allEnemies.forEach(enemy => enemy.update(dt, player1));
         // player1.update();
     };
 
