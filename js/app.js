@@ -25,7 +25,7 @@ class Enemy extends GameObject {
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
+Enemy.prototype.update = function(dt, player) {
   // You should multiply any movement by the dt parameter
   // which will ensure the game runs at the same speed for
   // all computers.
@@ -35,12 +35,12 @@ Enemy.prototype.update = function(dt) {
   this.x += (this.dx*dt);
 
   // code to handle collision:
-  if ((distanceBetween(this.x, player1.x) < 79)
-    && (this.y === player1.y)
-    && (distanceBetween(this.x, player1.x) > -79)) {
-      console.log(distanceBetween(this.x, player1.x));
-      player1.x = 300;
-      player1.y = 305;
+  if ((distanceBetween(this.x, player.x) < 79)
+    && (this.y === player.y)
+    && (distanceBetween(this.x, player.x) > -79)) {
+      console.log(distanceBetween(this.x, player.x));
+      player.x = 300;
+      player.y = 305;
   };
 };
 
