@@ -47,8 +47,6 @@ Enemy.prototype.update = function(dt, player) {
 };
 
 
-
-
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
@@ -80,7 +78,6 @@ Player.prototype.handleInput = function(move) {
 
 // instantiate player object.
 var player1 = new Player(300,385);
-
 
 // instantiate enemies objects and place them in an array called allEnemies
 const allEnemies = [];
