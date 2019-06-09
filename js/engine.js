@@ -87,7 +87,7 @@ var Engine = (function(global) {
         ctx.font = '18px serif';
         ctx.textAlign = 'center';
         ctx.fillText("To play again, refresh the page.", canvas.width/2, 350);
-    };
+    }
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
@@ -96,14 +96,14 @@ var Engine = (function(global) {
     function init() {
         lastTime = Date.now();
         main();
-    };
+    }
 
     /* This function is called by main (our game loop);
      * it updates entities;
      */
     function update(dt, player1) {
         updateEntities(dt);
-    };
+    }
 
     /* This is called by the update function and loops through all of the
      * objects within your allEnemies array as defined in app.js and calls
@@ -115,8 +115,7 @@ var Engine = (function(global) {
 
     function updateEntities(dt) {
         allEnemies.forEach(enemy => enemy.update(dt, player1));
-        // player1.update();
-    };
+    }
 
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
@@ -175,7 +174,7 @@ var Engine = (function(global) {
          */
         allEnemies.forEach(enemy => enemy.render());
         // player.render();
-    };
+    }
 
     function reset() {
       Resources.load([
@@ -187,7 +186,7 @@ var Engine = (function(global) {
       ]);
       Resources.onReady(init);
       return reset;
-    };
+    }
 
     /* Go ahead and load all of the images we know we're going to need to
      * draw our game level. Then set init as the callback method, so that when
@@ -204,7 +203,6 @@ var Engine = (function(global) {
     global.player1 = player1;
     global.reset = reset();
     global.win = win;
-
 
 
 })(this);
