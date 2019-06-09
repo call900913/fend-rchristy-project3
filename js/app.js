@@ -2,39 +2,46 @@ const enemy_sprite = document.getElementById('enemy');
 
 const player_sprite = document.getElementById('player');
 
-
-// Enemies for our player to avoid.
-function Enemy(x, y, dx) {
-  this.x = x;
-  this.y = y;
-  this.dx = dx;
-};
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
-    // this.sprite = 'images/enemy-bug.png';
+// function to calculate the distance between two objects.
 function distanceBetween(x1, x2) {
   return (x2 - x1);
 };
 
+class GameObject {
+  constructor(x = 0, y = 0) {
+    this.x = x;
+    this.y = y;
+  }
+};
+
+// Enemies for our player to avoid.
+class Enemy extends GameObject {
+  constructor(x, y, dx) {
+    super(x, y);
+    this.dx = dx;
+  }
+};
+
+
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-    if (this.x > canvas.width) {
-      this.x = -101;
-    };
-    this.x += (this.dx*dt);
+  // You should multiply any movement by the dt parameter
+  // which will ensure the game runs at the same speed for
+  // all computers.
+  if (this.x > canvas.width) {
+    this.x = -101;
+  };
+  this.x += (this.dx*dt);
 
-    // code to handle collision:
-    if ((distanceBetween(this.x, player1.x) < 79)
-        && (this.y === player1.y)
-        && (distanceBetween(this.x, player1.x) > -79)) {
-            console.log(distanceBetween(this.x, player1.x));
-            player1.x = 300;
-            player1.y = 305;
-    };
+  // code to handle collision:
+  if ((distanceBetween(this.x, player1.x) < 79)
+    && (this.y === player1.y)
+    && (distanceBetween(this.x, player1.x) > -79)) {
+      console.log(distanceBetween(this.x, player1.x));
+      player1.x = 300;
+      player1.y = 305;
+  };
 };
 
 // Draw the enemy on the screen, required method for game
@@ -50,9 +57,11 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-function Player(x,y) {
-  this.x = x;
-  this.y = y;
+
+class Player extends GameObject {
+  constructor(x ,y) {
+    super(x, y);
+  }
 };
 
 
