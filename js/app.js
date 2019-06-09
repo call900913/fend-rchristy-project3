@@ -13,6 +13,7 @@ class GameObject {
     this.y = y;
   }
 
+  // Draw the enemy on the screen, required method for game
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y, 101, 171);
   }
@@ -48,10 +49,7 @@ Enemy.prototype.update = function(dt, player) {
   };
 };
 
-// Draw the enemy on the screen, required method for game
-// Enemy.prototype.render = function() {
-//   ctx.drawImage(Resources.get(this.sprite), this.x, this.y, 101, 171);
-// };
+
 
 
 
@@ -69,10 +67,6 @@ class Player extends GameObject {
   }
 };
 
-
-// Player.prototype.render = function() {
-//   ctx.drawImage(Resources.get(this.sprite), this.x, this.y, 101, 171);
-// };
 
 // handleInput is the function to handle the keyboard input for moves.
 Player.prototype.handleInput = function(move) {
